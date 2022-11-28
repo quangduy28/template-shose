@@ -1,0 +1,37 @@
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 0;
+  background-color: white;
+  &-menu-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+    border-bottom: 1px solid $gray-dark-color;
+    margin-bottom: 1.6rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+  &-menu-item {
+    padding: 1rem 12rem;
+  }
+  &-menu-item:not(:last-child) {
+    border-right: 1px solid $gray-dark-color;
+  }
+  &-menu-item:hover {
+    color: $secondary-color;
+  }
+  &-menu-link {
+    color: $third-color;
+  }
+  &-form {
+  }
+  &-form-group {
+  }
+  &-form-label {
+  }
+  &-form-input {
+  }
+}

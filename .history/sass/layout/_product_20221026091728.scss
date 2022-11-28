@@ -1,0 +1,214 @@
+.product {
+  padding: 2rem 0;
+  &-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+  &-left {
+    width: 25%;
+  }
+  &-right {
+    width: 75%;
+    margin-left: 3rem;
+  }
+  &-group {
+    padding-bottom: 1.5rem;
+  }
+  &-title {
+    font-size: 1.4rem;
+    color: $title-color;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    display: inline-block;
+  }
+  &-sort {
+    font-size: 1.3rem;
+  }
+  &-sort-item {
+    margin-bottom: 1rem;
+  }
+  &-sort-item:hover &-sort-link {
+    color: $secondary-color;
+  }
+  &-sort-item:hover &-sort-check {
+    border: 1px solid $secondary-color;
+  }
+  &-sort-link {
+    color: $text-color;
+  }
+  &-sort-check {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 100%;
+    display: inline-block;
+    border: 1px solid $gray-dark-color;
+    margin-right: 1rem;
+  }
+  &-type {
+    font-size: 1.3rem;
+  }
+  &-type-item {
+    color: $text-color;
+    position: relative;
+    margin-bottom: 1rem;
+  }
+  &-type-item:hover {
+    color: $secondary-color;
+  }
+  &-type-item:hover &-type-label::before {
+    border: 1px solid $secondary-color;
+  }
+  &-type-input {
+    display: none;
+    &:checked + &-type-label::before {
+      background-color: $secondary-color;
+    }
+  }
+  &-type-label {
+    padding-left: 1rem;
+    margin-left: 1rem;
+    cursor: pointer;
+  }
+  &-type-label::before {
+    content: "";
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid $gray-dark-color;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+  &-size {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: -0.5rem;
+  }
+  &-size-item {
+    font-size: 1.3rem;
+    color: $text-color;
+    width: calc(25% - 0.5rem);
+    margin-left: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  &-size-item:hover &-size-number {
+    border: 1px solid $secondary-color;
+    color: $secondary-color;
+  }
+  &-size-input {
+    display: none;
+  }
+  &-size-number {
+    display: inline-block;
+    border: 1px solid $gray-dark-color;
+    @include size(100%, 2.5rem);
+    width: 100%;
+    height: 2.5rem;
+    font-size: 1.3rem;
+    @include flexbox(center, center);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  &-size-label {
+    cursor: pointer;
+  }
+  &-price {
+    font-size: 1.3rem;
+  }
+  &-price-item {
+    color: $text-color;
+    position: relative;
+    margin-bottom: 1rem;
+  }
+  &-price-item:hover {
+    color: $secondary-color;
+  }
+  &-price-item:hover &-price-label::before {
+    border: 1px solid $secondary-color;
+  }
+  &-price-input {
+    display: none;
+    &:checked + &-price-label::before {
+      background-color: $secondary-color;
+    }
+  }
+  &-price-label {
+    padding-left: 1rem;
+    margin-left: 1rem;
+    cursor: pointer;
+  }
+  &-price-label::before {
+    content: "";
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid $gray-dark-color;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+
+  &-right {
+  }
+  &-category-list {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: -3rem;
+  }
+  &-category-item {
+    width: calc(33.33% - 3rem);
+    margin-left: 3rem;
+    margin-bottom: 3rem;
+  }
+  &-category-image {
+    width: 100%;
+  }
+  &-category-info {
+    margin-top: 1rem;
+  }
+  &-category-name {
+    font-size: 1.4rem;
+    color: $title-color;
+  }
+  &-category-name:hover {
+    color: $secondary-color;
+  }
+  &-category-heading {
+    margin-bottom: 0.5rem;
+  }
+  &-category-price {
+    color: $secondary-color;
+    font-weight: 600;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .product {
+    &-left {
+      position: fixed;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-color: #fff;
+      width: 30rem;
+      z-index: 99;
+      transform: translateX(100%);
+      transition: all 0.25s ease;
+    }
+    &-right {
+      width: 100%;
+      margin-left: 0;
+      padding: 4rem 3rem;
+    }
+  }
+}

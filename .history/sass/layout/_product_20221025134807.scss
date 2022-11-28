@@ -1,0 +1,31 @@
+.product {
+  padding: 2rem 0;
+  &-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+  &-left {
+    width: 25%;
+  }
+  &-right {
+    width: 75%;
+  }
+  &-title {
+    font-size: 1.4rem;
+    color: $title-color;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    display: inline-block;
+  }
+  &-sort {
+    font-size: 1.3rem;
+  }
+  &-sort-check {
+    @include size(1rem);
+    border-radius: 100%;
+    display: inline-block;
+    border: 1px solid $gray-dark-color;
+  }
+}

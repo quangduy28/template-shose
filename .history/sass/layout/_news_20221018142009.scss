@@ -1,0 +1,58 @@
+.news {
+  padding: 5rem 0;
+  &-list {
+    margin-left: -2rem;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  &-item {
+    width: calc(33.33% - 2rem);
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+  }
+  &-image {
+    @include size(100%, 24rem);
+    object-fit: cover;
+  }
+  &-content {
+    margin-top: 2rem;
+  }
+  &-heading {
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    color: $title-color;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+  }
+  &-author {
+    color: $text-color;
+    margin-right: 1rem;
+  }
+  &-date {
+    color: $text-color;
+  }
+  &-desc {
+    color: $text-color;
+    margin-top: 1rem;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+  }
+}
+@include maxWidth(1023px) {
+  .news {
+    padding: 5rem 2rem;
+  }
+}

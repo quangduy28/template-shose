@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="favicon-16x16.png"
+      type="image/x-icon"
+      sizes="16x16"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kaushan+Script&amp;family=Montserrat:wght@400;500;600;700;800&amp;family=Roboto:wght@300&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="css/fontawesome.css" />
+    <link rel="stylesheet" href="css/app.css" />
+    <title>Shoes</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <!----------------------------- Header ------------------------------->
+      <section class="header">
+        <div class="container">
+          <!----------------------------- Logo ------------------------------->
+          <div class="header-left">
+            <a href="index.html" class="header-logo"
+              ><img
+                src="./images/logo-nike.png"
+                alt=""
+                class="header-logo-nike"
+            /></a>
+          </div>
+
+          <!----------------------------- Navigation ------------------------------->
+          <div class="header-middle">
+            <ul class="header-nav">
+              <li class="header-nav-item">
+                <a href="index.html" class="header-nav-link">Trang chủ</a>
+              </li>
+
+              <li class="header-nav-item">
+                <a href="introduce.html" class="header-nav-link">Giới thiệu</a>
+              </li>
+
+              <li class="header-nav-item">
+                <a href="product.html" class="header-nav-link">Sản phẩm</a>
+              </li>
+
+              <li class="header-nav-item">
+                <a href="news.html" class="header-nav-link">Tin tức</a>
+              </li>
+
+              <li class="header-nav-item">
+                <a href="contact.html" class="header-nav-link">Liên hệ</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="header-right">
+            <ul class="header-group">
+              <li class="header-group-item">
+                <a href="#" class="header-group-link"
+                  ><i
+                    class="fa fa-light fa-search header-icon header-search"
+                  ></i
+                ></a>
+              </li>
+
+              <li class="header-group-item">
+                <a href="login.html" class="header-group-link">
+                  <i class="fa fa-user header-user header-icon"></i>
+                </a>
+              </li>
+
+              <li class="header-group-item">
+                <a href="#" class="header-group-link"
+                  ><i class="fa fa-shopping-cart header-icon header-cart"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!----------------------------- Banner ------------------------------->
+      <section class="banner">
+        <div class="banner-top">
+          <img src="./images/slider-img.jpg" alt="" class="banner-image" />
+          <div class="banner-content">
+            <div class="banner-content-heading">Tất cả sản phẩm</div>
+            <ul class="banner-content-list">
+              <li class="banner-content-item">
+                <a href="index.html" class="banner-content-link">Trang chủ</a>
+              </li>
+              <li class="banner-content-item">
+                <a href="product.html" class="banner-content-link"
+                  >Tất cả sản phẩm</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!----------------------------- Product ------------------------------->
+      <section class="product">
+        <div class="container">
+          <div class="product-left">
+            <div class="product">
+              <div class="product-group">
+                <span class="product-title">Sắp xếp</span>
+                <ul class="product-sort">
+                  <li class="product-sort-item">
+                    <a href="#" class="product-sort-link">
+                      <span class="product-sort-check"></span>
+                      Mặc định
+                    </a>
+                  </li>
+
+                  <li class="product-sort-item">
+                    <a href="#" class="product-sort-link">
+                      <span class="product-sort-check"></span>
+                      Tên A-Z
+                    </a>
+                  </li>
+
+                  <li class="product-sort-item">
+                    <a href="#" class="product-sort-link">
+                      <span class="product-sort-check"></span>
+                      Tên Z-A
+                    </a>
+                  </li>
+
+                  <li class="product-sort-item">
+                    <a href="#" class="product-sort-link">
+                      <span class="product-sort-check"></span>
+                      Giá thấp đến cao
+                    </a>
+                  </li>
+
+                  <li class="product-sort-item">
+                    <a href="#" class="product-sort-link">
+                      <span class="product-sort-check"></span>
+                      Giá cap xuống thấp
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="product-group">
+                <span class="product-title">Loại</span>
+                <ul class="product-type-type">
+                  <li class="product-type-item">
+                    <input
+                      type="checkbox"
+                      name=""
+                      id="checkbox__input"
+                      class="checkbox__input"
+                    />
+                    <label for="checkbox__input" class="checkbox__label"
+                      >Giày bóng rổ</label
+                    >
+                  </li>
+
+                  <li class="product-type-item">
+                    <input
+                      type="checkbox"
+                      name=""
+                      id="checkbox__input"
+                      class="checkbox__input"
+                    />
+                    <label for="checkbox__input" class="checkbox__label"
+                      >Giày bóng rổ</label
+                    >
+                  </li>
+
+                  <li class="product-type-item">
+                    <input
+                      type="checkbox"
+                      name=""
+                      id="checkbox__input"
+                      class="checkbox__input"
+                    />
+                    <label for="checkbox__input" class="checkbox__label"
+                      >Giày bóng rổ</label
+                    >
+                  </li>
+
+                  <li class="product-type-item">
+                    <input
+                      type="checkbox"
+                      name=""
+                      id="checkbox__input"
+                      class="checkbox__input"
+                    />
+                    <label for="checkbox__input" class="checkbox__label"
+                      >Giày bóng rổ</label
+                    >
+                  </li>
+
+                  <li class="product-type-item">
+                    <input
+                      type="checkbox"
+                      name=""
+                      id="checkbox__input"
+                      class="checkbox__input"
+                    />
+                    <label for="checkbox__input" class="checkbox__label"
+                      >Giày bóng rổ</label
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <div class="product-group">
+                <span class="product-title">Kích thước</span>
+                <ul class="product-size">
+                  <li class="product-size-item">
+                    <label for="size-35" class="product-size-35">
+                      <input
+                        type="checkbox"
+                        name=""
+                        id="size-35"
+                        class="checkbox__input"
+                      />
+                      <span class="product-size-number">35</span>
+                    </label>
+                  </li>
+                  <li class="product-size-item">
+                    <label for="size-36" class="product-size-36">
+                      <input
+                        type="checkbox"
+                        name=""
+                        id="size-36"
+                        class="checkbox__input"
+                      />
+                      <span class="product-size-number">36</span>
+                    </label>
+                  </li>
+                  <li class="product-size-item">
+                    <label for="size-37" class="product-size-37">
+                      <input
+                        type="checkbox"
+                        name=""
+                        id="size-37"
+                        class="checkbox__input"
+                      />
+                      <span class="product-size-number">37</span>
+                    </label>
+                  </li>
+                  <li class="product-size-item">
+                    <label for="size-37.5" class="product-size-37.5">
+                      <input
+                        type="checkbox"
+                        name=""
+                        id="size-37.5"
+                        class="checkbox__input"
+                      />
+                      <span class="product-size-number">37.5</span>
+                    </label>
+                  </li>
+                  <li class="product-size-item">
+                    <label for="size-38" class="product-size-38">
+                      <input
+                        type="checkbox"
+                        name=""
+                        id="size-38"
+                        class="checkbox__input"
+                      />
+                      <span class="product-size-number">38</span>
+                    </label>
+                  </li>
+                  <li class="product-size-item">
+                    <label for="size-39" class="product-size-39">
+                      <input
+                        type="checkbox"
+                        name=""
+                        id="size-39"
+                        class="checkbox__input"
+                      />
+                      <span class="product-size-number">39</span>
+                    </label>
+                  </li>
+                  <li class="product-size-item">
+                    <label for="size-40" class="product-size-40">
+                      <input
+                        type="checkbox"
+                        name=""
+                        id="size-40"
+                        class="checkbox__input"
+                      />
+                      <span class="product-size-number">40</span>
+                    </label>
+                  </li>
+                  <li class="product-size-item">
+                    <label for="size-41" class="product-size-41">
+                      <input
+                        type="checkbox"
+                        name=""
+                        id="size-41"
+                        class="checkbox__input"
+                      />
+                      <span class="product-size-number">41</span>
+                    </label>
+                  </li>
+                  <li class="product-size-item">
+                    <label for="size-41.5" class="product-size-41.5">
+                      <input
+                        type="checkbox"
+                        name=""
+                        id="size-41.5"
+                        class="checkbox__input"
+                      />
+                      <span class="product-size-number">41.5</span>
+                    </label>
+                  </li>
+                  <li class="product-size-item">
+                    <label for="size-42" class="product-size-42">
+                      <input
+                        type="checkbox"
+                        name=""
+                        id="size-42"
+                        class="checkbox__input"
+                      />
+                      <span class="product-size-number">42</span>
+                    </label>
+                  </li>
+                  <li class="product-size-item">
+                    <label for="size-42.5" class="product-size-42.5">
+                      <input
+                        type="checkbox"
+                        name=""
+                        id="size-42.5"
+                        class="checkbox__input"
+                      />
+                      <span class="product-size-number">42.5</span>
+                    </label>
+                  </li>
+                  <li class="product-size-item">
+                    <label for="size-43" class="product-size-43">
+                      <input
+                        type="checkbox"
+                        name=""
+                        id="size-43"
+                        class="checkbox__input"
+                      />
+                      <span class="product-size-number">43</span>
+                    </label>
+                  </li>
+                  <li class="product-size-item">
+                    <label for="size-43.5" class="product-size-43.5">
+                      <input
+                        type="checkbox"
+                        name=""
+                        id="size-43.5"
+                        class="checkbox__input"
+                      />
+                      <span class="product-size-number">43.5</span>
+                    </label>
+                  </li>
+                  <li class="product-size-item">
+                    <label for="size-44" class="product-size-44">
+                      <input
+                        type="checkbox"
+                        name=""
+                        id="size-44"
+                        class="checkbox__input"
+                      />
+                      <span class="product-size-number">44</span>
+                    </label>
+                  </li>
+                  <li class="product-size-item">
+                    <label for="size-45" class="product-size-45">
+                      <input
+                        type="checkbox"
+                        name=""
+                        id="size-45"
+                        class="checkbox__input"
+                      />
+                      <span class="product-size-number">45</span>
+                    </label>
+                  </li>
+                  <li class="product-size-item">
+                    <label for="size-45.5" class="product-size-45.5">
+                      <input
+                        type="checkbox"
+                        name=""
+                        id="size-45.5"
+                        class="checkbox__input"
+                      />
+                      <span class="product-size-number">45.5</span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-right"></div>
+        </div>
+      </section>
+      <!----------------------------- Footer ------------------------------->
+      <section class="footer">
+        <div class="container">
+          <div class="footer-content">
+            <div class="footer-column">
+              <a href="index.html" class="footer-logo"
+                ><img
+                  src="./images/logo-nike.png"
+                  alt=""
+                  class="footer-logo-nike"
+              /></a>
+
+              <div class="footer-contact">
+                <div class="footer-contact-item">
+                  <i class="fa fa-location"></i>
+                  <span class="footer-contact-title"
+                    >Tầng 6, Tòa nhà Ladeco, 266 Đội Cấn, Phường Liễu Giai, Quận
+                    Ba Đình, TP Hà Nội
+                  </span>
+                </div>
+
+                <div class="footer-contact-item">
+                  <i class="fa fa-phone"></i>
+                  <span class="footer-contact-title">19006750 </span>
+                </div>
+
+                <div class="footer-contact-item">
+                  <i class="fa fa-headset"></i>
+                  <span class="footer-contact-title">support@sapo.vn </span>
+                </div>
+              </div>
+
+              <div class="footer-payment">
+                <a href="#" class="footer-payment-link"
+                  ><img
+                    src="./images/payment-1.png"
+                    alt=""
+                    class="footer-payment-image" /></a
+                ><a href="#" class="footer-payment-link"
+                  ><img
+                    src="./images/payment-2.png"
+                    alt=""
+                    class="footer-payment-image" /></a
+                ><a href="#" class="footer-payment-link"
+                  ><img
+                    src="./images/payment-3.png"
+                    alt=""
+                    class="footer-payment-image" /></a
+                ><a href="#" class="footer-payment-link"
+                  ><img
+                    src="./images/payment-4.png"
+                    alt=""
+                    class="footer-payment-image"
+                /></a>
+              </div>
+            </div>
+            <div class="footer-column">
+              <h3 class="footer-heading">Chính sách</h3>
+              <a href="index.html" class="footer-nav-link">Trang chủ</a>
+              <a href="introduce.html" class="footer-nav-link">Giới thiệu</a>
+              <a href="product.html" class="footer-nav-link">Sản phẩm</a>
+              <a href="news.html" class="footer-nav-link">Tin tức</a>
+              <a href="contact.html" class="footer-nav-link">Liên hệ</a>
+            </div>
+            <div class="footer-column">
+              <h3 class="footer-heading">Theo dõi chúng tôi</h3>
+              <div class="footer-social-list">
+                <a href="#" class="footer-social-icon"
+                  ><i class="fab fa-facebook"></i></a
+                ><a href="#" class="footer-social-icon"
+                  ><i class="fab fa-instagram"></i></a
+                ><a href="#" class="footer-social-icon"
+                  ><i class="fab fa-youtube"></i
+                ></a>
+              </div>
+              <h3 class="footer-heading">Đăng ký để nhận tin</h3>
+              <form action="" class="footer-form">
+                <input
+                  type="email"
+                  name=""
+                  placeholder="Nhập địa chỉ email"
+                  id=""
+                  class="footer-form-input"
+                />
+                <button type="submit" class="footer-form-button">Gửi</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script src="./script/index.js"></script>
+  </body>
+</html>

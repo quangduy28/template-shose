@@ -1,0 +1,17 @@
+.banner {
+  &-content {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      @include size(100%);
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+  &-image {
+    min-height: 304px;
+  }
+}

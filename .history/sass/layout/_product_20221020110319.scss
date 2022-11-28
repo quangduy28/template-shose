@@ -1,0 +1,14 @@
+.product {
+  padding: 2rem 0;
+  &-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+  &-left {
+    width: 25%;
+  }
+  &-right {
+    width: 75%;
+  }
+}

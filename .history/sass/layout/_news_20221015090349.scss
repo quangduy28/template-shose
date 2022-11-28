@@ -1,0 +1,19 @@
+.news {
+  &-list {
+  }
+  &-item {
+  }
+  &-image {
+    @include size(100%, 24rem);
+  }
+  &-content {
+  }
+  &-heading {
+  }
+  &-author {
+  }
+  &-date {
+  }
+  &-desc {
+  }
+}

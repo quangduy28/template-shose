@@ -1,0 +1,60 @@
+.product {
+  padding: 2rem 0;
+  &-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+  &-left {
+    width: 25%;
+  }
+  &-right {
+    width: 75%;
+  }
+  &-group {
+    padding-bottom: 1.5rem;
+  }
+  &-title {
+    font-size: 1.4rem;
+    color: $title-color;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    display: inline-block;
+  }
+  &-sort {
+    font-size: 1.3rem;
+  }
+  &-sort-item {
+    margin-bottom: 0.5rem;
+  }
+  &-sort-item:hover &-sort-link {
+    color: $secondary-color;
+  }
+  &-sort-item:hover &-sort-check {
+    color: $secondary-color;
+  }
+  &-sort-link {
+    color: $text-color;
+  }
+  &-sort-check {
+    @include size(1rem);
+    border-radius: 100%;
+    display: inline-block;
+    border: 1px solid $gray-dark-color;
+    margin-right: 1rem;
+  }
+  &-type {
+    font-size: 1.3rem;
+  }
+  &-type-item {
+    color: $text-color;
+    position: relative;
+  }
+  &-type-lable::before {
+    content: "";
+    position: absolute;
+    @include size(1rem);
+    border: 1px solid $gray-dark-color;
+  }
+}

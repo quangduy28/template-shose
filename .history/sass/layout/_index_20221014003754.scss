@@ -1,0 +1,247 @@
+// Header
+.header {
+  background-color: $third-color;
+  padding: 2.4rem 0;
+  .container {
+    @include flexbox(center, space-between);
+    color: white;
+  }
+  &-logo-nike {
+    @include size(10rem, 3rem);
+  }
+  &-nav {
+    @include flexbox(space-between);
+  }
+  &-nav-link {
+    color: white;
+  }
+  &-nav-item {
+    margin-right: 3rem;
+    position: relative;
+  }
+  &-nav-link:hover {
+    color: $secondary-color;
+    transition: all 0.25s linear;
+  }
+  &-group {
+    @include flexbox(center, space-between);
+  }
+  &-group-link {
+    margin-left: 3rem;
+    color: white;
+  }
+  &-group-link:hover {
+    color: $secondary-color;
+    transition: all 0.25s linear;
+  }
+  &-subnav-list {
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(black, 0.2);
+    margin-top: 2rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s linear, visibility 0.2s linear;
+    top: 100%;
+    left: 0;
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: transparent;
+      width: 100%;
+      top: 0;
+      left: 0;
+      @include size(100%, 2rem);
+      transform: translateY(-100%);
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      @include size(1.5rem);
+      background-color: white;
+      border-radius: 2px;
+      top: 0;
+      left: 0;
+      transform: translate(8.2rem, -50%) rotate(-45deg);
+      z-index: 1;
+    }
+    z-index: 5;
+  }
+  &-nav-item:hover {
+    .header-subnav-list {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  &-subnav-item {
+    min-width: 18rem;
+    &:not(:last-child) {
+      border-bottom: 1px solid $gray-dark-color;
+    }
+  }
+  &-subnav-link {
+    color: $text-color;
+    padding: 1rem 2rem;
+    display: inline-block;
+    width: 100%;
+    transition: all 0.25s linear;
+    font-size: 1.4rem;
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+}
+// Slider
+.slider {
+  &-content {
+    width: 100%;
+  }
+  &-image {
+    @include size(100%);
+    max-height: 61rem;
+    object-fit: cover;
+  }
+}
+// Content
+.content {
+  padding: 6rem;
+  color: white;
+  // background: linear-gradient(to bottom, rgba(#333, 0.7), rgba(#333, 0.7)),
+  //   url(/images/footer-img.jpg);
+  background: rgba($color: #000000, $alpha: 0.9) url(/images/banner2.jpg)
+    no-repeat center / cover;
+  &-heading {
+    text-transform: uppercase;
+    font-size: 4rem;
+    display: block;
+    font-weight: 600;
+    letter-spacing: 1.2rem;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-left: 3rem;
+    padding-right: 2rem;
+    &::before {
+      content: "";
+      position: absolute;
+      @include size(1rem);
+      background-color: #fff;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      @include size(1rem);
+      background-color: #fff;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  &-title {
+    @include flexbox(center, center, column);
+  }
+  &-desc {
+    display: block;
+    margin-bottom: 3rem;
+  }
+  &-list {
+    @include flexbox(center, space-between, row, flex, wrap);
+    margin-left: -2rem;
+  }
+  &-item {
+    width: calc(25% - 2rem);
+    margin-left: 2rem;
+    margin-bottom: 3rem;
+  }
+  &-image {
+    height: 30rem;
+    width: 30rem;
+    object-fit: cover;
+  }
+}
+// Footer
+.footer {
+  background: linear-gradient(
+      to bottom,
+      rgba($third-color, 0.5),
+      rgba($third-color, 0.5)
+    ),
+    url(/images/footer-banner.png) no-repeat center / cover;
+  opacity: 0.9;
+  background-color: #ccc;
+  padding: 6rem 4rem;
+  color: white;
+  font-size: 1.4rem;
+  &-content {
+    @include flexbox(space-between);
+    margin-left: -3rem;
+  }
+  &-column {
+    margin-left: 3rem;
+    width: calc(30% - 3rem);
+    &:first-child {
+      width: calc(50% - 3rem);
+    }
+    &:nth-child(2) {
+      width: calc(20% - 3rem);
+    }
+  }
+  &-logo-nike {
+    @include size(15rem, 5rem);
+    margin-bottom: 2rem;
+  }
+  &-contact-item {
+    margin-bottom: 1.5rem;
+    display: flex;
+  }
+  &-contact-title {
+    margin-left: 1rem;
+    display: inline-block;
+  }
+  &-payment {
+  }
+  &-payment-link {
+    display: inline-block;
+    margin-right: 0.5rem;
+  }
+  &-payment-image {
+    object-fit: cover;
+  }
+  &-heading {
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 2rem;
+  }
+  &-nav-link {
+    color: white;
+    display: block;
+    margin-bottom: 1.5rem;
+  }
+  &-social-list {
+    margin-bottom: 2rem;
+  }
+  &-social-icon {
+    color: white;
+    font-size: 3rem;
+    margin-right: 1.5rem;
+  }
+  &-form {
+    width: 100%;
+    @include flexbox;
+  }
+  &-form-input {
+    padding: 1rem 1rem 1rem 1.5rem;
+  }
+  &-form-button {
+    background-color: $primary-color;
+    border: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+    width: 100%;
+  }
+}
+@include maxWidth(1023px) {
+}

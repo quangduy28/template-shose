@@ -1,0 +1,25 @@
+.news {
+  &-list {
+    @include flexbox(space-between, wrap);
+    margin-left: -2rem;
+  }
+  &-item {
+    width: calc(33.33% - 2rem);
+    margin-left: 2rem;
+  }
+  &-image {
+    @include size(36rem, 24rem);
+
+    object-fit: cover;
+  }
+  &-content {
+  }
+  &-heading {
+  }
+  &-author {
+  }
+  &-date {
+  }
+  &-desc {
+  }
+}

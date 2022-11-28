@@ -1,0 +1,21 @@
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 0;
+  &-menu-list {
+  }
+  &-menu-item {
+  }
+  &-menu-link:not(:last-child) {
+    color: $third-color;
+  }
+  &-form {
+  }
+  &-form-group {
+  }
+  &-form-label {
+  }
+  &-form-input {
+  }
+}

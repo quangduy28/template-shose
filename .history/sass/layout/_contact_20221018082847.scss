@@ -1,0 +1,32 @@
+.contact {
+  padding: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &-heading {
+    font-size: 2.4rem;
+    color: $title-color;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+  &-desc {
+    font-size: 1.4rem;
+  }
+  &-form-label {
+    color: $title-color;
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    font-size: 1.4rem;
+  }
+  &-form-input {
+    display: block;
+    width: 100%;
+    padding: 1rem 2rem;
+  }
+  &-form-input:nth-child(4) {
+    min-height: 10rem;
+  }
+}

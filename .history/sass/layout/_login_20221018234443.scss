@@ -1,0 +1,27 @@
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 0;
+  &-menu-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+  }
+  &-menu-item {
+    border-right: 1px solid $gray-dark-color;
+    display: inline-block;
+  }
+  &-menu-link {
+    color: $third-color;
+  }
+  &-form {
+  }
+  &-form-group {
+  }
+  &-form-label {
+  }
+  &-form-input {
+  }
+}

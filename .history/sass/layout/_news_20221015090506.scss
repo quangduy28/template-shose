@@ -1,0 +1,21 @@
+.news {
+  &-list {
+    @include flexbox(space-between, wrap);
+  }
+  &-item {
+  }
+  &-image {
+    @include size(100%, 24rem);
+    object-fit: cover;
+  }
+  &-content {
+  }
+  &-heading {
+  }
+  &-author {
+  }
+  &-date {
+  }
+  &-desc {
+  }
+}
