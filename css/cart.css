@@ -1,0 +1,82 @@
+.cart i {
+  cursor: pointer;
+}
+.add-cart-plus {
+  font-size: 1rem;
+}
+.cart {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  padding-top: 30px;
+}
+.cart h2 {
+  margin-bottom: 20px;
+}
+.cart table {
+  width: 100%;
+}
+.cart table thead tr th:first-child {
+  text-align: left;
+}
+.cart table tr td {
+  border-bottom: 1px solid #ddd;
+  padding: 12px 5px;
+  height: 100%;
+}
+.cart table thead tr th:last-child {
+  text-align: right;
+}
+.cart table tbody tr td:last-child {
+  text-align: right;
+}
+.cart button {
+  margin-top: 12px;
+  height: 30px;
+  padding: 0 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: black;
+  color: #f8f8f8;
+  font-weight: 600;
+}
+
+/*  */
+.cart {
+  z-index: 99;
+  position: fixed;
+  height: 100vh;
+  width: 400px;
+  right: 0;
+  top: 0;
+  background-color: #999;
+  padding: 12px 20px;
+  overflow-y: scroll;
+  right: -100%;
+  transition: all 0.5s ease;
+}
+
+.fa-circle-xmark {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.btn-thanh-toan {
+  /* position: absolute; */
+
+  bottom: 20px;
+  right: 120px;
+}
+.price-total {
+  /* position: absolute; */
+  right: 10px;
+  bottom: 60px;
+  padding-top: 20px;
+}
+#table-cart {
+  /* overflow-y: scroll; */
+}
+.footer-cart {
+  width: 100%;
+}

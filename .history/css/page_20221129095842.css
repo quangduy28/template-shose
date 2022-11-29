@@ -1,0 +1,29 @@
+.page {
+  /* height: 100px; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  padding: 20px;
+}
+.page div {
+  cursor: default;
+  font-family: "Poppins", sans-serif;
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  text-align: center;
+  padding-top: 2px;
+  margin: 0px 3px;
+  background-color: black;
+  color: white;
+  border: 3px solid black;
+  border-radius: 3px;
+  transition: background 0.3s;
+}
+.page div:hover {
+  color: black;
+  background-color: white;
+  border: 3px solid black;
+}

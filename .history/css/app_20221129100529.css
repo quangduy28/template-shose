@@ -1,0 +1,192 @@
+@import url("reset.css");
+@import url("fontawesome.css");
+@import url("global.css");
+@import url("variables.css");
+@import url("header.css");
+@import url("slider.css");
+@import url("content.css");
+@import url("banner.css");
+@import url("introduce.css");
+@import url("new.css");
+@import url("contact.css");
+@import url("product.css");
+@import url("footer.css");
+@import url("login.css");
+@import url("register.css");
+@import url("modal.css");
+@import url("page.css");
+@import url("cart.css");
+@import url("bill.css");
+
+/* Sau khi đăng nhập */
+.loginsuccess-wrapper {
+  padding: 2rem 2rem 2rem 2rem;
+  box-shadow: 0 0 10px #cccccc;
+  width: 600px;
+  display: flex;
+  display: none;
+}
+.left {
+  width: 30%;
+}
+.right {
+  padding: 0 20px;
+}
+.logout-group {
+  display: flex;
+  padding-top: 10px;
+  margin-left: 20px;
+}
+.dangxuat {
+  margin-left: 5px;
+  cursor: pointer;
+}
+#icon-logout-item {
+  color: #888;
+}
+.right-group {
+  padding: 9px 10px;
+}
+.right-group-title {
+  margin-left: 80px;
+}
+.hoten {
+  font-weight: 600;
+  padding-right: 5px;
+}
+.Email {
+  font-weight: 600;
+  padding-right: 5px;
+}
+.sdt {
+  font-weight: 600;
+  padding-right: 5px;
+}
+.matkhau {
+  font-weight: 600;
+  padding-right: 5px;
+}
+.date {
+  font-weight: 600;
+  padding-right: 5px;
+}
+.logout-group:hover #icon-logout-item {
+  color: red;
+}
+.logout-group:hover .dangxuat {
+  color: red;
+}
+
+/* switch button */
+.switch {
+  position: absolute;
+  display: inline-block;
+  width: 90px;
+  height: 51px;
+}
+.switch input {
+  /* opacity: 0; */
+  width: 20px;
+  height: 20px;
+  margin-left: 85px;
+}
+.close {
+  float: right;
+  color: black;
+  font-size: 35px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* trang chủ */
+.video-header {
+  position: absolute;
+  top: 15%;
+  left: 20%;
+  z-index: 2;
+}
+#container {
+  position: relative;
+}
+.video-header .video-header-item:last-child {
+  color: white;
+  font-size: 1.8rem;
+  padding: 15px;
+  background-color: orange;
+  border-radius: 5px;
+  margin-top: 50px;
+  font-weight: 500;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  width: 125px;
+  margin-left: 400px;
+}
+.footer {
+  margin-top: -1px;
+}
+.video-header .video-header-item:last-child:hover span {
+  cursor: pointer;
+  color: orange;
+}
+.video-header .video-header-item:last-child:hover {
+  background-color: #fff;
+}
+.video-header .video-header-item:first-child {
+  width: 80%;
+}
+.video-header .video-header-item h2 {
+  padding-bottom: 10px;
+  color: white;
+  text-transform: uppercase;
+  float: none;
+  font-size: 40px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+
+  margin-top: 20px;
+  text-align: center;
+  width: 100%;
+}
+.video-header .video-header-item p {
+  word-wrap: break-word;
+  font-size: 2rem;
+  line-height: 40px;
+}
+.video-container {
+  bottom: 0px;
+  right: 0px;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1000;
+  overflow: hidden;
+  padding: 0px;
+}
+.mota {
+  position: absolute;
+  background-color: rgba(108, 171, 248, 0.5);
+  width: 100%;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 10px 10px;
+  bottom: -80px;
+  line-height: 20px;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+}
+.mota h3 {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.content-item:hover .mota {
+  bottom: 0;
+  opacity: 1;
+}
+.mota p:last-child {
+  color: red;
+  font-weight: 500;
+}

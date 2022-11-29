@@ -1,0 +1,20 @@
+.introduce {
+  padding: 5rem 0;
+}
+.introduce-top {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+.introduce-bottom {
+  line-height: 1.4;
+  word-spacing: 0.5rem;
+}
+.introduce-bottom:not(:last-child) {
+  margin-bottom: 1rem;
+}
+@media screen and (max-width: 1023px) {
+  .introduce {
+    padding: 4rem 3rem;
+  }
+}

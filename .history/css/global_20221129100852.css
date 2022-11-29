@@ -1,0 +1,36 @@
+a {
+  text-decoration: none;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  line-height: 1;
+  color: #333333;
+  font-size: 1.6rem;
+}
+input,
+button {
+  font-family: #fe6b5e;
+  line-height: 1;
+  font-size: 1.6rem;
+  outline: none;
+}
+button {
+  cursor: pointer;
+}
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+.wrapper {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}

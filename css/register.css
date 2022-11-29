@@ -1,0 +1,125 @@
+.register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 0;
+  background-color: white;
+}
+.register-wrapper {
+  padding: 1rem 2rem 4rem 2rem;
+  box-shadow: 0 0 10px #cccccc;
+}
+.register-menu-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5rem;
+  border-bottom: 1px solid #cccccc;
+  margin-bottom: 1.6rem;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+.register-menu-item {
+  padding: 1rem 12rem;
+  color: #120414;
+  cursor: pointer;
+}
+.register-menu-item:not(:last-child) {
+  border-right: 1px solid #cccccc;
+}
+.register-menu-item:hover {
+  color: #fe6b5e;
+  transition: all 0.25s ease;
+}
+.register-form-group {
+  margin-bottom: 2rem;
+}
+.register-form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  color: #333333;
+  font-weight: 600;
+}
+.register-form-input {
+  display: block;
+  width: 100%;
+  border: 1px solid #e5e5e5;
+  padding: 1rem 2rem;
+  background-color: #f8f8f8;
+}
+.register-form-submit {
+  width: 100%;
+  padding: 1rem 0;
+  text-transform: uppercase;
+  border: 1px solid #e5e5e5;
+  background-color: black;
+  color: white;
+  font-weight: 600;
+  font-size: 1.3rem;
+  border-radius: 0.5rem;
+}
+.register-form-submit:hover {
+  background-color: #3f3fdb;
+  transition: all 0.25s linear;
+}
+@media screen and (max-width: 767px) {
+  .register {
+    min-height: auto;
+  }
+  .register-menu-item {
+    padding: 1rem 4rem;
+  }
+  .register-menu-list {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  .register {
+    min-height: auto;
+  }
+  .register-menu-item {
+    padding: 1rem 4rem;
+  }
+  .register-menu-list {
+    font-size: 1.5rem;
+  }
+}
+
+.error-fname {
+  display: none;
+  font-size: 1.3rem;
+  color: red;
+}
+.error-email {
+  display: none;
+  font-size: 1.3rem;
+  color: red;
+}
+
+.error-name {
+  display: none;
+  font-size: 1.3rem;
+  color: red;
+}
+.error-pass {
+  display: none;
+  font-size: 1.3rem;
+  color: red;
+}
+.error-phone {
+  display: none;
+  font-size: 1.3rem;
+  color: red;
+}
+.error-login-pass {
+  display: none;
+  font-size: 1.3rem;
+  color: red;
+}
+.error-login-email {
+  display: none;
+  font-size: 1.3rem;
+  color: red;
+}
