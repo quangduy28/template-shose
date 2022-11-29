@@ -1,0 +1,135 @@
+.header {
+  background-color: #120414;
+  padding: 2.4rem 0;
+}
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  color: white;
+}
+.header-logo-nike {
+  width: 10rem;
+  height: 3rem;
+  cursor: pointer;
+}
+.header-nav {
+  display: flex;
+  align-items: space-between;
+  justify-content: flex-start;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin-left: 120px;
+}
+.header-nav-item {
+  margin-right: 2rem;
+  position: relative;
+  cursor: pointer;
+}
+.header-nav-item:hover {
+  color: #fe6b5e;
+  transition: all 0.25s linear;
+}
+.header-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.header-group .header-group-item:first-child {
+  margin: 0;
+  display: flex;
+  height: 100%;
+}
+.header-group .header-group-item:first-child input {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border: unset;
+  padding: 2px 1px 2px 0;
+  background-color: #fff;
+  font-family: "Roboto", sans-serif;
+  width: 165px;
+}
+.header-group .header-group-item:first-child button {
+  background-color: #777;
+  border: unset;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 0px 6px 0 4px;
+}
+.header-group .header-group-item:first-child button i {
+  color: white;
+}
+
+.header-group-item {
+  margin-left: 3rem;
+  color: white;
+  cursor: pointer;
+}
+.header-group-item:hover {
+  color: #fe6b5e;
+  transition: all 0.25s linear;
+}
+.header-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+@media screen and (max-width: 1023px) {
+  .header {
+    padding: 2.4rem 3rem;
+  }
+  .header-middle {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #fff;
+    width: 30rem;
+    z-index: 99;
+    transform: translateX(-100%);
+    transition: all 0.25s ease;
+  }
+  .header .header-middle.is-expand {
+    transform: translateX(0);
+  }
+  .header-nav {
+    display: block;
+    padding: 2rem;
+  }
+  .header-nav-item {
+    margin-right: 0;
+    margin-bottom: 3rem;
+  }
+  .header-nav-item:hover .header-nav-link {
+    color: #fe6b5e;
+    transition: all 0.25s linear;
+  }
+  .header-nav-link {
+    color: #333333;
+  }
+  .header-toggle {
+    display: inline-block;
+    margin-left: 3rem;
+    align-self: center;
+    transition: all 0.25s linear;
+  }
+  .header-toggle:hover {
+    color: #fe6b5e;
+  }
+}
+@media screen and (max-width: 767px) {
+  .header {
+    padding: 2rem 1rem;
+  }
+  .header-logo-nike {
+    width: 7rem;
+    height: 2rem;
+  }
+  .header-nav-item {
+    color: #999999;
+  }
+}
