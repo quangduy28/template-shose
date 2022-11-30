@@ -523,7 +523,7 @@ function innerProductPage() {
   `;
   container.innerHTML = template;
   // innerDetailProduct();
-  innerPage2();
+  innerPage();
 }
 
 function innerNewsPage() {
@@ -772,11 +772,8 @@ function innerLoginPageAdmin() {
       </div>
     </div>
   </section>
-
-  <!----------------------------- Login ------------------------------->
   <section class="login">
     <div class="container" id="login-container">
-
     <div class="loginsuccess-wrapper">
     <div class="left">
      <img src="./images/iconlogin.jpg" alt="" class="left-image" />
@@ -920,6 +917,5 @@ function innerRegisterPage() {
   </section>
   `;
   container.innerHTML = template;
-
   registerfrm();
 }

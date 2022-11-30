@@ -1,4 +1,4 @@
-function innerPage2() {
+function innerPage() {
   // createProduct()
   // function createProduct() {
   //     if(localStorage.getItem('product5') === null) {
@@ -79,11 +79,11 @@ function innerPage2() {
     let currentPage = 1;
     let start = 0;
     let end = perPage;
-    function renderProduct1() {
+    function renderProduct() {
       const ProductPerform = document.querySelector(".product-category-list");
 
       let s = "";
-      const content = product.map((item, index) => {
+      product.forEach((item, index) => {
         if (index >= start && index < end) {
           s += `
                   <div class="product-category-item" onclick="showProductDetail('${
@@ -108,37 +108,37 @@ function innerPage2() {
 
       ProductPerform.innerHTML = s;
     }
-    function getCurrentPage1(currentPage) {
+    function getCurrentPage(currentPage) {
       start = (currentPage - 1) * perPage;
       end = currentPage * perPage;
     }
-    function changePage1() {
+    function changePage() {
       const currentPages = document.querySelectorAll(".page div");
       for (let i = 0; i < currentPages.length; i++) {
         currentPages[i].addEventListener("click", function () {
           let value = i + 1;
           currentPage = value;
-          getCurrentPage1(currentPage);
-          renderProduct1();
+          getCurrentPage(currentPage);
+          renderProduct();
         });
       }
     }
 
-    function displayPanigation1() {
+    function displayPagination() {
       let productNumberPage = document.querySelector(".page");
 
       let sotrang = Math.ceil(product.length / perPage);
-      var lienket = "";
-      for (var i = 1; i <= sotrang; i++) {
+      let lienket = "";
+      for (let i = 1; i <= sotrang; i++) {
         vitri = (i - 1) * perPage;
         lienket += '<div class="pageNumber">' + i + "</div>";
       }
       productNumberPage.innerHTML = lienket;
       // document.getElementById("page").innerHTML=lienket;
     }
-    renderProduct1();
-    displayPanigation1();
-    changePage1();
+    renderProduct();
+    displayPagination();
+    changePage();
   }
 }
 

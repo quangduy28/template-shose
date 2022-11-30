@@ -3,11 +3,11 @@ function currency(num) {
   return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + "đ";
 }
 
-function innerPage2() {
+function innerPage() {
   createProduct();
   function createProduct() {
-    if (localStorage.getItem("product6") === null) {
-      let product = [
+    if (localStorage.getItem("product") === null) {
+      const product = [
         {
           image: "./images/img/nike01.jpg",
           price: "3000000",
@@ -224,7 +224,7 @@ function innerPage2() {
           name: "Air Jordan 1 Low SE 02",
         },
       ];
-      localStorage.setItem("product6", JSON.stringify(product));
+      localStorage.setItem("product", JSON.stringify(product));
     }
   }
   function currency(num) {
@@ -234,7 +234,7 @@ function innerPage2() {
   // Hiển thị sản phẩm
   console.log(document.querySelector(".product-category-list"));
   console.log(document.querySelector(".page"));
-  showProduct(JSON.parse(localStorage.getItem("product6")));
+  showProduct(JSON.parse(localStorage.getItem("product")));
 }
 function showProduct(tmpArr) {
   let product = tmpArr;
@@ -242,11 +242,13 @@ function showProduct(tmpArr) {
   let currentPage = 1;
   let start = 0;
   let end = perPage;
-  function renderProduct1() {
-    const ProductPerform = document.querySelector(".product-category-list");
+  function renderProduct() {
+    const productCategoryList = document.querySelector(
+      ".product-category-list"
+    );
 
     let s = "";
-    const content = product.map((item, index) => {
+    product.forEach((item, index) => {
       if (index >= start && index < end) {
         s += `
                 <div class="product-category-item" onclick="showProductDetail('${
@@ -269,48 +271,48 @@ function showProduct(tmpArr) {
       }
     });
 
-    ProductPerform.innerHTML = s;
+    productCategoryList.innerHTML = s;
   }
-  function getCurrentPage1(currentPage) {
+  function getCurrentPage(currentPage) {
     start = (currentPage - 1) * perPage;
     end = currentPage * perPage;
   }
-  function changePage1() {
+  function changePage() {
     const currentPages = document.querySelectorAll(".page div");
     for (let i = 0; i < currentPages.length; i++) {
       currentPages[i].addEventListener("click", function () {
         let value = i + 1;
         currentPage = value;
-        getCurrentPage1(currentPage);
-        renderProduct1();
+        getCurrentPage(currentPage);
+        renderProduct();
       });
     }
   }
 
-  function displayPanigation1() {
+  function displayPagination() {
     let productNumberPage = document.querySelector(".page");
 
     let sotrang = Math.ceil(product.length / perPage);
-    var lienket = "";
-    for (var i = 1; i <= sotrang; i++) {
+    let lienket = "";
+    for (let i = 1; i <= sotrang; i++) {
       vitri = (i - 1) * perPage;
       lienket += '<div class="pageNumber">' + i + "</div>";
     }
     productNumberPage.innerHTML = lienket;
     // document.getElementById("page").innerHTML=lienket;
   }
-  renderProduct1();
-  displayPanigation1();
-  changePage1();
+  renderProduct();
+  displayPagination();
+  changePage();
 }
 
-function search1() {
-  innerPage2();
+function searchProduct() {
+  innerPage();
   let tmpArr = [];
-  var productsearch = document.getElementById("search").value.toLowerCase();
-  var arrProduct = JSON.parse(localStorage.getItem("product6"));
+  const productsearch = document.getElementById("search").value.toLowerCase();
+  const arrProduct = JSON.parse(localStorage.getItem("product"));
   if (productsearch != "") {
-    for (var i = 0; i < arrProduct.length; i++) {
+    for (let i = 0; i < arrProduct.length; i++) {
       if (
         arrProduct[i].name.toLowerCase().search(productsearch) != -1 &&
         productsearch != ""
@@ -319,14 +321,14 @@ function search1() {
       }
     }
     showProduct(tmpArr);
-  } else showProduct(JSON.parse(localStorage.getItem("product6")));
+  } else showProduct(JSON.parse(localStorage.getItem("product")));
 }
 
 function showProductDetail(productname) {
   function currency(num) {
     return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + "đ";
   }
-  let product2 = JSON.parse(localStorage.getItem("product6"));
+  let product2 = JSON.parse(localStorage.getItem("product"));
   const productSingle = document.querySelector(".product-single");
   for (let i = 0; i < product2.length; i++) {
     if (product2[i].name === productname) {
@@ -422,13 +424,13 @@ function showProductDetail(productname) {
 
 function createAdmin() {
   if (localStorage.getItem("user") === null) {
-    var userArray = [];
-    var user = {
+    let userArray = [];
+    let user = {
       email: "admin@gmail.com",
       password: "12345678",
-      fullname: "ADMIN",
+      fullName: "ADMIN",
       phone: "0815147600",
-      datesignup: "20-11-2022",
+      dateSignup: "20-11-2022",
     };
     userArray.push(user);
     localStorage.setItem("user", JSON.stringify(userArray));
@@ -445,13 +447,13 @@ function registerfrm() {
     .addEventListener("submit", createUser);
   function createUser(e) {
     e.preventDefault();
-    var fname = document.getElementById("fname");
-    var name = document.getElementById("name");
-    var phone = document.getElementById("text");
-    var email = document.getElementById("email");
-    var password = document.getElementById("password");
-    var fullname = fname.value + " " + name.value + "";
-    var flag = false;
+    const fname = document.getElementById("fname");
+    const name = document.getElementById("name");
+    const phone = document.getElementById("text");
+    const email = document.getElementById("email");
+    const password = document.getElementById("password");
+    const fullname = fname.value + " " + name.value + "";
+    let flag = false;
 
     // Phần kiểm tra Firstname người dùng
     if (fname.value.length === 0) {
@@ -531,18 +533,18 @@ function registerfrm() {
       return true;
     }
 
-    var d = new Date();
-    var datesignup =
+    let d = new Date();
+    let dateSignup =
       d.getDate() + "-" + (d.getMonth() + 1) + "-" + d.getFullYear();
-    var user = {
+    let user = {
       email: email.value,
       password: password.value,
-      fullname: fullname,
+      fullName: fullname,
       phone: phone.value,
-      datesignup: datesignup,
+      dateSignup: dateSignup,
     };
     var userArray = JSON.parse(localStorage.getItem("user"));
-    for (var i = 0; i < userArray.length; i++) {
+    for (let i = 0; i < userArray.length; i++) {
       if (user.email == userArray[i].email) {
         document.querySelector(".error-email").style.display = "block";
         document.getElementById("email").style.border = "1px solid red";
@@ -635,9 +637,9 @@ function loginfrm() {
 
   function login(e) {
     e.preventDefault();
-    var email = document.getElementById("email-login").value;
-    var password = document.getElementById("password-login").value;
-    var flag = false;
+    const email = document.getElementById("email-login").value;
+    const password = document.getElementById("password-login").value;
+    let flag = false;
 
     // Phần kiểm tra email của người dùng
     if (email.length === 0) {
@@ -668,8 +670,8 @@ function loginfrm() {
     if (flag == true) {
       return false;
     }
-    var userArray = JSON.parse(localStorage.getItem("user"));
-    for (var i = 0; i < userArray.length; i++) {
+    const userArray = JSON.parse(localStorage.getItem("user"));
+    for (let i = 0; i < userArray.length; i++) {
       if (email == userArray[i].email && password == userArray[i].password) {
         // closeFormLogin();
         localStorage.setItem("userlogin", JSON.stringify(userArray[i]));
@@ -695,8 +697,8 @@ function logout() {
 
 function checklogin() {
   if (localStorage.getItem("userlogin")) {
-    var user = JSON.parse(localStorage.getItem("userlogin"));
-    var s = "";
+    const user = JSON.parse(localStorage.getItem("userlogin"));
+    let s = "";
     if (user.email == "admin@gmail.com" && user.password == "12345678") {
       window.location.href = "Admin.html";
     } else {
@@ -746,21 +748,22 @@ function checklogin() {
 let cartArr = [];
 
 function addCart() {
-  // let cartArr = []
-  let productarr = JSON.parse(localStorage.getItem("product6"));
+  const productArr = JSON.parse(localStorage.getItem("product"));
+  // nút thêm sản phẩm
   const btn = document.querySelector(".modal-add-cart");
   // console.log(btn)
   btn.addEventListener("click", function (e) {
-    var btnItem = e.target;
-    var product = btnItem.parentElement.parentElement.parentElement;
-    var productImg = product.querySelector("img").src;
-    var productName = product.querySelector(".modal-title").innerText;
+    const btnItem = e.target;
+    const product = btnItem.parentElement.parentElement.parentElement;
+    // console.log(product);
+    const productImg = product.querySelector("img").src;
+    const productName = product.querySelector(".modal-title").innerText;
     // console.log(productName==productarr[0].name)
     let productPrice;
-    for (var i = 0; i < productarr.length; i++) {
-      if (productName == productarr[i].name) {
-        productPrice = productarr[i].price;
-        cartArr.push(productarr[i]);
+    for (let i = 0; i < productArr.length; i++) {
+      if (productName == productArr[i].name) {
+        productPrice = productArr[i].price;
+        cartArr.push(productArr[i]);
       }
     }
     localStorage.setItem("cart", JSON.stringify(cartArr));
@@ -769,17 +772,17 @@ function addCart() {
   });
 
   function addcart(productImg, productName, productPrice) {
-    var addtr = document.createElement("tr");
-    var cartItem = document.querySelectorAll("tbody tr");
-    for (var i = 0; i < cartItem.length; i++) {
-      var productT = document.querySelectorAll(".tensp");
+    const addtr = document.createElement("tr");
+    const cartItem = document.querySelectorAll("tbody tr");
+    // console.log(cartItem);
+    for (let i = 0; i < cartItem.length; i++) {
+      const productT = document.querySelectorAll(".tensp");
       if (productT[i].innerText == productName) {
         alert("Sản phẩm đã có trong giỏ hàng");
         return;
       }
     }
-
-    var trcontent = `     
+    const trcontent = `     
     <tr>
       <td>
         <div
@@ -813,7 +816,7 @@ function addCart() {
       </td>
   </tr>`;
     addtr.innerHTML = trcontent;
-    var cartTable = document.querySelector("tbody");
+    const cartTable = document.querySelector("tbody");
     //  console.log(cartTable)
     cartTable.append(addtr);
 
@@ -821,54 +824,55 @@ function addCart() {
     deletecart();
   }
 
-  //tính tổng
+  //tính tổng số tiền
   function carttotal() {
-    var cartItem = document.querySelectorAll("tbody tr");
-    totalC = 0;
-    for (var i = 0; i < cartItem.length; i++) {
-      var inputValue = cartItem[i].querySelector("input").value;
-      var productPrice = cartItem[i].querySelector(".gia").innerText;
-
-      totalA = inputValue * productPrice;
-
+    const cartItem = document.querySelectorAll("tbody tr");
+    let totalC = 0;
+    for (let i = 0; i < cartItem.length; i++) {
+      // số lượng giày
+      const inputValue = cartItem[i].querySelector("input").value;
+      // giá giày
+      const productPrice = cartItem[i].querySelector(".gia").innerText;
+      let totalA = inputValue * productPrice;
       // totalB = totalA.toLocaleString('de-DE')
-
       totalC = totalC + totalA;
       // console.log(totalC)
       // totalD = totalC.toLocaleString('de-DE')
     }
-
-    var cartTotalA = document.querySelector(".price-total span");
+    const cartTotalA = document.querySelector(".price-total span");
     cartTotalA.innerHTML = totalC.toLocaleString("de-DE");
     inputChange();
   }
 
   //delete cart
   function deletecart() {
-    let cartArr = JSON.parse(localStorage.getItem("cart"));
-    let productarr = JSON.parse(localStorage.getItem("product6"));
-    var cartItem = document.querySelectorAll("tbody tr");
-    for (var i = 0; i < cartItem.length; i++) {
-      var productT = document.querySelectorAll(".delete-cart");
+    const cartArr = JSON.parse(localStorage.getItem("cart"));
+    const productArr = JSON.parse(localStorage.getItem("product"));
+    const cartItem = document.querySelectorAll("tbody tr");
+    for (let i = 0; i < cartItem.length; i++) {
+      const productT = document.querySelectorAll(".delete-cart");
       productT[i].addEventListener("click", function (e) {
-        const namedelete = e.target.parentNode.parentNode;
-        const namedelete2 = namedelete.querySelector("span").innerText;
-        // console.log(namedelete2)
-        for (var i = 0; i < productarr.length; i++) {
-          for (var j = 0; j < cartArr.length; j++) {
+        const namedelete = e.target.parentNode.parentNode; // lấy ra thằng sản phẩm trong giỏ hàng
+        // console.log(namedelete);
+        const namedelete2 = namedelete.querySelector("span").innerText; // lấy ra tên sản phẩm
+        // console.log(namedelete2);
+        for (let i = 0; i < productArr.length; i++) {
+          for (let j = 0; j < cartArr.length; j++) {
             if (
-              productarr[i].name == namedelete2 &&
-              productarr[i].name == cartArr[j].name
+              productArr[i].name == namedelete2 &&
+              productArr[i].name == cartArr[j].name
             ) {
+              // xóa sản phẩm bắt đầu từ vị trí j và xóa 1 thằng
               cartArr.splice(j, 1);
               changeIcon();
             }
           }
         }
 
-        var cartDelete = e.target;
-        var cartItemP = cartDelete.parentElement.parentElement;
-        localStorage.setItem("cart", JSON.stringify(cartArr));
+        const cartDelete = e.target;
+        const cartItemP = cartDelete.parentElement.parentElement;
+        // console.log(cartItemP);
+        localStorage.setItem("cart", JSON.stringify(cartArr)); // xóa sản phẩm trong giỏ khỏi local
         cartItemP.remove();
         carttotal();
         changeIcon();
@@ -877,20 +881,11 @@ function addCart() {
   }
 
   function inputChange() {
-    // let cartArr
-    // let productarr = JSON.parse(localStorage.getItem('product5'))
-    // var quantity
-    var cartItem = document.querySelectorAll("tbody tr");
-    for (var i = 0; i < cartItem.length; i++) {
-      var inputValue = cartItem[i].querySelector("input");
+    const cartItem = document.querySelectorAll("tbody tr");
+    for (let i = 0; i < cartItem.length; i++) {
+      const inputValue = cartItem[i].querySelector("input");
+      // console.log(inputValue);
       inputValue.addEventListener("change", function () {
-        // for(var j = 0 ; j < productarr.length ; j++){
-        //       if (cartItem[i].querySelector(".tensp").innerText == productarr[j].name){
-        //         productarr[j].quantity = inputValue.value
-        //         cartArr.push(productarr[j])
-        //         localStorage.setItem('cart',JSON.stringify(cartArr))
-        //       }
-        // }
         carttotal();
       });
     }
@@ -913,20 +908,19 @@ function buy() {
     alert("Bạn phải đăng nhập trước khi mua sản phẩm");
     return false;
   }
-  var info = "";
-  var totalprice = 0;
+  let info = "";
+  let totalprice = 0;
   if (
     localStorage.getItem("cart") === null ||
     localStorage.getItem("cart") == "[]" ||
     document.querySelectorAll("tbody tr").length == 0
   ) {
     alert("Không có đơn hàng nào để thanh toán");
-
     return false;
   }
-  var cartItem = document.querySelectorAll("tbody tr");
-  var cartArray = JSON.parse(localStorage.getItem("cart"));
-  for (var i = 0; i < cartArray.length; i++) {
+  const cartItem = document.querySelectorAll("tbody tr");
+  const cartArray = JSON.parse(localStorage.getItem("cart"));
+  for (let i = 0; i < cartArray.length; i++) {
     const cartItemName = cartItem[i].querySelector(".tensp").innerText;
     // console.log(cartItem[i].querySelector(".tensp").innerText)
     console.log(cartArray[i].name);
@@ -938,13 +932,13 @@ function buy() {
     info += sl + " x " + cartArray[i].name + "; ";
     totalprice += sl * cartArray[i].price;
   }
-  var customer = JSON.parse(localStorage.getItem("userlogin"));
-  var date = new Date();
-  var d =
+  const customer = JSON.parse(localStorage.getItem("userlogin"));
+  const date = new Date();
+  const d =
     date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
   if (localStorage.getItem("bill") === null) {
-    var billArray = [];
-    var bill = {
+    let billArray = [];
+    const bill = {
       id: billArray.length,
       info: info,
       totalprice: totalprice,
@@ -955,8 +949,8 @@ function buy() {
     billArray.unshift(bill);
     localStorage.setItem("bill", JSON.stringify(billArray));
   } else {
-    var billArray = JSON.parse(localStorage.getItem("bill"));
-    var bill = {
+    const billArray = JSON.parse(localStorage.getItem("bill"));
+    const bill = {
       id: billArray.length,
       info: info,
       totalprice: totalprice,
@@ -983,12 +977,12 @@ function showbill() {
   if (localStorage.getItem("bill") === null) {
     document.getElementById("bill").innerHTML = "Không có hóa đơn nào";
   } else {
-    var user = JSON.parse(localStorage.getItem("userlogin"));
-    var billArray = JSON.parse(localStorage.getItem("bill"));
-    var s = "";
-    var n = 0;
-    for (var i = 0; i < billArray.length; i++) {
-      if (user.fullname == billArray[i].customer.fullname) {
+    const user = JSON.parse(localStorage.getItem("userlogin"));
+    const billArray = JSON.parse(localStorage.getItem("bill"));
+    let s = "";
+    let n = 0;
+    for (let i = 0; i < billArray.length; i++) {
+      if (user.fullname === billArray[i].customer.fullname) {
         n++;
         s +=
           '<div class="billcontent">' +
@@ -1018,18 +1012,18 @@ function showbill() {
 
 function addCart2() {
   let cartArr = [];
-  let productarr = JSON.parse(localStorage.getItem("product6"));
+  const productarr = JSON.parse(localStorage.getItem("product"));
   const btn = document.querySelector(".modal-buy-now");
-  console.log(btn);
+  // console.log(btn);
   btn.addEventListener("click", function (e) {
-    var btnItem = e.target;
-    var product = btnItem.parentElement.parentElement.parentElement;
-    var productImg = product.querySelector("img").src;
-    var productName = product.querySelector(".modal-title").innerText;
+    const btnItem = e.target;
+    const product = btnItem.parentElement.parentElement.parentElement;
+    const productImg = product.querySelector("img").src;
+    const productName = product.querySelector(".modal-title").innerText;
     // console.log(productName==productarr[0].name)
     let productPrice;
-    for (var i = 0; i < productarr.length; i++) {
-      if (productName == productarr[i].name) {
+    for (let i = 0; i < productarr.length; i++) {
+      if (productName === productarr[i].name) {
         productPrice = productarr[i].price;
         cartArr.push(productarr[i]);
       }
@@ -1039,17 +1033,17 @@ function addCart2() {
   });
 
   function addcart(productImg, productName, productPrice) {
-    var addtr = document.createElement("tr");
-    var cartItem = document.querySelectorAll("tbody tr");
-    for (var i = 0; i < cartItem.length; i++) {
-      var productT = document.querySelectorAll(".tensp");
-      if (productT[i].innerText == productName) {
+    const addtr = document.createElement("tr");
+    const cartItem = document.querySelectorAll("tbody tr");
+    for (let i = 0; i < cartItem.length; i++) {
+      const productT = document.querySelectorAll(".tensp");
+      if (productT[i].innerText === productName) {
         alert("Sản phẩm đã có trong giỏ hàng");
         return;
       }
     }
 
-    var trcontent = `
+    let trcontent = `
     <tr>
       <td>
         <div
@@ -1089,37 +1083,33 @@ function addCart2() {
     var cartTable = document.querySelector("tbody");
     //  console.log(cartTable)
     cartTable.append(addtr);
-
     carttotal();
     deletecart();
   }
 
   //tính tổng
   function carttotal() {
-    var cartItem = document.querySelectorAll("tbody tr");
-    totalC = 0;
-    for (var i = 0; i < cartItem.length; i++) {
-      var inputValue = cartItem[i].querySelector("input").value;
-      var productPrice = cartItem[i].querySelector(".gia").innerText;
-
-      totalA = inputValue * productPrice;
-
+    const cartItem = document.querySelectorAll("tbody tr");
+    let totalC = 0;
+    for (let i = 0; i < cartItem.length; i++) {
+      const inputValue = cartItem[i].querySelector("input").value;
+      const productPrice = cartItem[i].querySelector(".gia").innerText;
+      let totalA = inputValue * productPrice;
       // totalB = totalA.toLocaleString('de-DE')
-
       totalC = totalC + totalA;
       // console.log(totalC)
       // totalD = totalC.toLocaleString('de-DE')
     }
-    var cartTotalA = document.querySelector(".price-total span");
+    const cartTotalA = document.querySelector(".price-total span");
     cartTotalA.innerHTML = totalC.toLocaleString("de-DE");
     inputChange();
   }
 }
 //thay đổi ++ trên icon
 function changeIcon() {
-  var cartItem = document.querySelectorAll("tbody tr");
-  var icon_add = document.querySelector(".add-item-carts");
-  var s = `<i class="fa fa-shopping-cart header-icon header-cart"></i>
+  const cartItem = document.querySelectorAll("tbody tr");
+  const icon_add = document.querySelector(".add-item-carts");
+  let s = `<i class="fa fa-shopping-cart header-icon header-cart"></i>
   <span class="add-cart-plus">${cartItem.length}</span>`;
   icon_add.innerHTML = s;
 }
